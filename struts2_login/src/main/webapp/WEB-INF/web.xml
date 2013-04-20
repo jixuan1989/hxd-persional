@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="struts_blank" version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>Struts Blank Convention</display-name>
+
+    <listener>
+        <listener-class>cn.edu.cqu.InitListener</listener-class>
+    </listener>
+
+    
+    
+        <!-- 定义过虑jsp文件或指定目录的Filter -->  
+    <filter>  
+        <filter-name>sessionFilter</filter-name>  
+        <filter-class>cn.edu.cqu.filter.SessionFilter</filter-class>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>sessionFilter</filter-name>  
+         <url-pattern>/lg/*</url-pattern>  
+    </filter-mapping>
+    
+    <filter>
+        <filter-name>struts2-ueditorFixed</filter-name>
+<!--         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class> -->
+    	<filter-class>cn.edu.cqu.filter.UEditorFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2-ueditorFixed</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    
+
+    
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        
+    </welcome-file-list>
+</web-app>

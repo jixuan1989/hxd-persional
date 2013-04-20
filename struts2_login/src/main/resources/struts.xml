@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.action.extension" value="asp" />  
+    <constant name="struts.custom.i18n.resources" value="lang"/>
+<!--         <constant name="struts.convention.action.packages" value="com.jgeppert.struts2.jquery.showcase"/> -->
+<!--     <constant name="struts.action.excludePattern" value="/tlxweb/ueditor*" /> -->
+    <!-- 打开开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 包含struts-jquery.xml文件，后面所有的action都在这个文件中配置 -->
+<!-- 	<include file="struts-jquery.xml"/> -->
+
+    
+    
+    
+    <!--不受权限控制的Action请求配置-->
+	<package name="non-authority" extends="struts-default" >		
+<!-- 		<action name="login" class="cn.edu.cqu.actions.LoginAction"> -->
+<!-- 			<result name="input">/login.jsp</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 			<result name="success">/welcome.jsp</result> -->
+<!-- 		</action>		 -->
+<!-- 		<action name="qurey" class="cn.edu.cqu.actions.LoginAction" method="qurey"> -->
+<!-- 			<result name="success">/qurey.jsp</result> -->
+<!-- 		</action> -->
+	</package>
+	
+
+		<!--受权限控制的Action请求配置-->
+	<package name="authority" extends="struts-default">
+<!-- 		<interceptors> -->
+			<!--定义一个名为authority的拦截器-->
+<!-- 			<interceptor class="cn.edu.cqu.interceptor.AuthorityInterceptor" name="authority"/> -->
+			<!--定义一个包含权限检查的拦截器栈-->
+<!-- 			<interceptor-stack name="mydefault"> -->
+				<!--配置内建默认拦截器-->
+<!-- 				<interceptor-ref name="defaultStack"/> -->
+				<!--配置自定义的拦截器-->
+<!-- 				<interceptor-ref name="authority"/> -->
+<!-- 			</interceptor-stack> -->
+<!-- 		</interceptors> -->
+		
+<!-- 		<default-interceptor-ref name="mydefault" /> -->
+		<!--定义全局Result-->
+<!-- 		<global-results> -->
+<!-- 			<result name="login">/login.jsp</result> -->
+<!-- 		</global-results> -->
+
+<!-- 		<action name="show" class="cn.edu.cqu.actions.LoginAction" -->
+<!-- 			method="show"> -->
+<!-- 			<result name="success">/show.jsp</result> -->
+<!-- 		</action> -->
+		
+<!-- 		<action name="add" class="cn.edu.cqu.actions.LoginAction" -->
+<!-- 			method="add"> -->
+<!-- 			<result name="success">/add.jsp</result> -->
+<!-- 		</action> -->
+		
+	</package>
+	
+	
+	
+<!--     <package name="default" extends="struts-default"> -->
+<!--         <global-results> -->
+<!--             <result name="wrong" >/error.jsp</result> -->
+<!--         </global-results> -->
+<!--        <global-exception-mappings> -->
+<!--             <exception-mapping result="wrong" exception="java.lang.Exception">    -->
+<!--             </exception-mapping>             -->
+<!--        </global-exception-mappings> -->
+<!--     </package> -->
+    
+<!--     <package name="authority" extends="default" > -->
+<!--         <global-results> -->
+<!--             <result name="success" type="redirectAction">/login.jsp</result> -->
+<!--         </global-results> -->
+<!--        <global-exception-mappings>            -->
+<!--             <exception-mapping result="shouldlogin" exception="com.trsjh.exceptions.LoginException">    -->
+<!--             </exception-mapping> -->
+<!--        </global-exception-mappings> -->
+       
+<!--     </package>   -->
+
+    
+</struts>
+<!-- <struts> -->
+<!--     Configuration for the default package. -->
+<!--     <package name="default" extends="struts-default"> -->
+
+<!--         Default interceptor stack. -->
+<!--         <default-interceptor-ref name="paramsPrepareParamsStack"/> -->
+        
+<!--         <action name="index" class="com.trsjh.actions.HelloAction" method="list"> -->
+<!--             <result name="success">/WEB-INF/jsp/employees.jsp</result> -->
+<!--             we don't need the full stack here -->
+<!--             <interceptor-ref name="basicStack"/> -->
+<!--         </action> -->
+
+<!--         <action name="crud" class="com.trsjh.actions.HelloAction" method="input"> -->
+<!--             <result name="success" type="redirectAction">index</result> -->
+<!--             <result name="input">/WEB-INF/jsp/employeeForm.jsp</result> -->
+<!--             <result name="error">/WEB-INF/jsp/error.jsp</result> -->
+<!--         </action> -->
+<!--     </package> -->
+<!-- </struts> -->
+
+
+
+
